@@ -1,0 +1,10 @@
+--What games have a Higher average rating of 2 other than Abduction
+
+SELECT * FROM Games1
+Where Not Name = 'Abduction' AND AvgRating > '2.00'
+
+--What games came out in 2007 ? 
+
+SELECT COUNT(*) AS TotalGames1
+FROM Games1
+WHERE Year = 2007
