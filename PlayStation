@@ -1,0 +1,21 @@
+-- 1) Who developed the God of War?
+
+SELECT Developer
+FROM PlayStation4Games
+WHERE Title = 'God of War';
+
+-- 2) Select all games published after 2017 excluding Horizon Zero Dawn.
+
+SELECT * FROM PlayStation4Games 
+Where Not Title = 'Horizon Zero Dawn' AND ReleaseDate > '2017-01-01'
+
+-- 3) How many Playstation 4 Games are included in this Dataset?
+
+SELECT COUNT(*) AS NumGames
+FROM PlayStation4Games
+
+-- 4) What is the earliest published game? 
+
+SELECT TOP 1 Title, ReleaseDate
+FROM PlayStation4Games
+ORDER BY ReleaseDate ASC;
