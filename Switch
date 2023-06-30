@@ -1,0 +1,23 @@
+-- 1) How many different titles are included in the database?
+
+SELECT COUNT(DISTINCT Title) AS TotalTitles
+FROM Games;
+
+-- 2) How many games were Published by Game Freak?
+
+SELECT Developer, COUNT(*) AS NumGames
+FROM Games
+GROUP BY Developer
+HAVING COUNT(*) > 1;
+
+-- 3) What games came out after 2018?
+
+SELECT *
+FROM Games
+WHERE Release_Date > '2018-12-31';
+
+-- 4) Are there any games that share a publisher? 
+
+SELECT COUNT(*) AS TotalGames
+FROM Games
+WHERE Publisher_ID = 3
